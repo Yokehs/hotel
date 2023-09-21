@@ -1,18 +1,21 @@
 package com.yokeh.hotel.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "employee", schema = "hotel")
 public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    //@GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private int Id;
+    @Column(name = "firstname")
     private String firstName;
+    @Column(name = "surname")
     private String surname;
+    @Column(name = "secondname")
     private String secondName;
+    @Column(name = "phonenumber")
     private String phoneNumber;
 
     public Employee(String firstName, String surname, String secondName, String phoneNumber){
@@ -22,16 +25,16 @@ public class Employee {
         this.phoneNumber = phoneNumber;
     }
 
-    protected Employee() {
-
+    public Employee() {
     }
 
-    public String toString(){
-        return String.format(
-                "Employee[id=%d, firstName='%s', surname='%s', secondName='%s',phoneNumber='%s']",
-                id, firstName, surname, secondName, phoneNumber);
+    public int getId() {
+        return Id;
     }
 
+    public void setId(int id) {
+        this.Id = id;
+    }
     public String getFirstName() {
         return firstName;
     }
@@ -63,5 +66,16 @@ public class Employee {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + Id +
+                ", firstName='" + firstName + '\'' +
+                ", surname='" + surname + '\'' +
+                ", secondName='" + secondName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                '}';
     }
 }
