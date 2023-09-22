@@ -8,7 +8,7 @@ public class Employee {
     @Id
     //@GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private int Id;
+    private Integer Id;
     @Column(name = "firstname")
     private String firstName;
     @Column(name = "surname")
@@ -28,11 +28,11 @@ public class Employee {
     public Employee() {
     }
 
-    public int getId() {
+    public Integer getId() {
         return Id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.Id = id;
     }
     public String getFirstName() {
