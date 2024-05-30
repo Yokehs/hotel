@@ -24,8 +24,16 @@ public class EmployeeController {
         System.out.println("Вызов из контроллера employeeService.findAll()");
         List <Employee> employees = employeeService.findAll();
         //model.addAttribute("employees", employeeService.findAll());
-        model.addAttribute("employees", employees);
+        //model.addAttribute("employees", employees);
         return "employees";
+    }
+    @RequestMapping(path = "/all", method = RequestMethod.GET)
+    public List getAllEmployee1(Model model){
+        System.out.println("Вызов из контроллера employeeService.findAll()");
+        List <Employee> employees = employeeService.findAll();
+        //model.addAttribute("employees", employeeService.findAll());
+        //model.addAttribute("employees", employees);
+        return employees;
     }
 
     @RequestMapping("/{id}")

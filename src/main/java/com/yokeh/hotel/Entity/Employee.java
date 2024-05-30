@@ -59,7 +59,6 @@ public class Employee {
         this.secondName = secondName;
     }
 
-
     public String getPhoneNumber() {
         return phoneNumber;
     }
