@@ -1,4 +1,4 @@
-package com.yokeh.hotel.Exceptions;
+package com.yokeh.employee.Exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

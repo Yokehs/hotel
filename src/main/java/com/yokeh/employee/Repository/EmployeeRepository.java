@@ -1,6 +1,6 @@
-package com.yokeh.hotel.Repository;
+package com.yokeh.employee.Repository;
 
-import com.yokeh.hotel.Entity.Employee;
+import com.yokeh.employee.Entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

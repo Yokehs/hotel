@@ -1,13 +1,12 @@
-package com.yokeh.hotel.Service;
+package com.yokeh.employee.Service;
 
-import com.yokeh.hotel.Entity.Employee;
-import com.yokeh.hotel.Exceptions.NotFoundExceptions;
-import com.yokeh.hotel.Repository.EmployeeRepository;
+import com.yokeh.employee.Entity.Employee;
+import com.yokeh.employee.Exceptions.NotFoundExceptions;
+import com.yokeh.employee.Repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class EmployeeService {

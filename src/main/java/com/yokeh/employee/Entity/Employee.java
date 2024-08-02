@@ -1,4 +1,4 @@
-package com.yokeh.hotel.Entity;
+package com.yokeh.employee.Entity;
 
 import jakarta.persistence.*;
 
