@@ -31,8 +31,9 @@ services:
     user: postgres
 #     secrets:
 #       - db-password
-#    volumes:
+    volumes:
 #      - db-data:/var/lib/postgresql/data
+      - ./pg_data:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER = postgres
       - POSTGRES_PASSWORD = postgres
@@ -48,6 +49,8 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+#  volumes:
+#    pg_data
 #  volumes:
  #   db-data:
 #  secrets:
