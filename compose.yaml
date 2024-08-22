@@ -1,0 +1,40 @@
+services:
+  employee:
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL = jdbc:postgresql://postgres:5433/hotel
+      - Spring.datasource.username=postgres
+      - spring.datasource.password=postgres
+      - spring.datasource.driver-class-name=org.postgresql.Driver
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    container_name: postgres
+    #image: postgres:16-alpine
+    image: postgres:16
+    #restart: always
+    user: postgres
+    #user: "999:999"
+    environment:
+      - POSTGRES_USER = 'postgres'
+      - POSTGRES_PASSWORD = 'postgres'
+      - POSTGRES_DB = 'hotel'
+      - PGDATA = '/var/lib/postgresql/data/pgdata'
+      - PGPORT=5433
+    ports:
+      - "5433:5433"
+    #expose:
+    #  - "5432"
+    healthcheck:
+      test: [ "CMD", "pg_isready" ]
+      interval: 20s
+      timeout: 20s
+      retries: 3
+    volumes:
+      - pg_data:/var/lib/postgresql/data/pgdata
+volumes:
+  pg_data:

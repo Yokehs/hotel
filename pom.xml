@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.yokeh</groupId>
-	<artifactId>hotel</artifactId>
+	<artifactId>employee</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>hotel</name>
 	<description>Demo project for Spring Boot</description>
@@ -25,11 +25,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-			<version>42.6.0</version>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
